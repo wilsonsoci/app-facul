@@ -7,7 +7,7 @@ interface IProps {
 
 export function Button({ title, action }: IProps) {
  return (
-   <View className='w-fit flex items-center justify-center px-10 py-5 rounded-full bg-blue-600'>
+   <View className='w-72 flex items-center justify-center py-4 rounded-full mb-20 shadow-slate-800' style={{ backgroundColor: "#612FCC" }}>
     <Pressable onPress={action}>
         <Text className='text-2xl text-white'>{title}</Text>
     </Pressable>

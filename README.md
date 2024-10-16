@@ -1,19 +1,19 @@
 # APP-FACUL: LOGIN E CADASTRO
 
-## Get started
+## Vamos começar!
 
-1. Install dependencies
+1. Instale as dependências
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Inicie o aplicativo
 
    ```bash
     npx expo start
    ```
 
-## Learn more
+## Aprenda mais:
 
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [Aprenda com o tutorial da Expo](https://docs.expo.dev/tutorial/introduction/): Siga o passo-a-passo onde você vai aprender a montar um projeto que roda em Android, iOS e Web.
