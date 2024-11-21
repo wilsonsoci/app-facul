@@ -1,39 +1,11 @@
-import "../styles/global.css"
-import { Slot } from "expo-router";
-import React, { useEffect, useState } from "react";
-import * as Font from "expo-font"
-import { Text, View, StyleSheet } from "react-native";
-
-const loadFonts = async () => {
-  await Font.loadAsync({
-    'Poppins-Regular': require("../../assets/fonts/Poppins-Regular.ttf"),
-    'Poppins-Bold': require("../../assets/fonts/Poppins-Bold.ttf")
-  })
-}
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
-  const [fontsLoaded, setFontsLoaded] = useState(false)
-
-  useEffect(() => {
-    loadFonts().then(() => setFontsLoaded(true))
-  }, [])
-
-  if(!fontsLoaded) {
-    return <View><Text>Carregando...</Text></View>
-  }
-
   return (
-    <View style={styles.container}>
-      <Slot/>
-    </View>
-  )
+    <Stack>
+      <Stack.Screen name="index" options={{ headerTitle: "Início", headerStyle: { backgroundColor: "#3E2D3F" }, headerTintColor: "#fff" }} />
+      <Stack.Screen name="auth/login/index" options={{ headerTitle: "Login", headerStyle: { backgroundColor: "#3E2D3F" }, headerTintColor: "#fff" }} />
+      <Stack.Screen name="auth/register/index" options={{ headerTitle: "Criar Conta", headerStyle: { backgroundColor: "#3E2D3F" }, headerTintColor: "#fff" }} />
+    </Stack>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    fontFamily: "Poppins-Regular"
-  }
-})

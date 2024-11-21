@@ -1,43 +1,77 @@
-import { View, Text, ImageBackground } from 'react-native';
-import { Button } from '../components/button';
-import { router } from 'expo-router';
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import { router } from "expo-router";
 
-import Constants from 'expo-constants';
+import { Button } from "../components/button"
 
-const statusBarHeight = Constants.statusBarHeight
+import Constants from "expo-constants";
 
-const backgroundImage = require('../../assets/images/background.jpg')
+const statusBarHeight = Constants.statusBarHeight;
 
 export default function Index() {
- return (
-   <View className='w-full' style={{ backgroundColor: "#3E2D3F", flex: 1 }}>
-    <ImageBackground
-      source={backgroundImage}
-      style={{flex: 1}}
-      resizeMode='cover'
-    >
-      <View className='w-full flex flex-col items-center justify-center' style={{ marginTop: statusBarHeight + 8 }}>
-        <Text className='text-4xl text-white bold-text mt-40'>APP-FACUL</Text>
+  function goToLogin() {
+    
+  }
 
-        <Text 
-          className='text-xl text-neutral-300 bold-text mt-4'>Bem-vindo ao app!</Text>
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>APP-FACUL</Text>
+        <Text style={styles.subtitle}>Bem-vindo ao app!</Text>
       </View>
 
-      <View className='w-full mt-32 flex flex-col items-center justify-center'>
-        <Button 
-          title='Criar conta' 
-          action={() => router.navigate("./tabs/auth/register")}
-        />
-        <Button 
-          title='Entrar' 
-          action={() => router.navigate("./tabs/auth/login")}
-        />
+      <View style={styles.buttonContainer}>
+          <Button title="Criar conta" action={() => router.push("auth/register" as any)} />
+          <Button title="Entrar" action={() => router.push("auth/login" as any)} />
       </View>
 
-      <View className='w-full items-center justify-center mt-20'>
-        <Text className='text-neutral-400'>APP-FACUL™ 2024 </Text>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>APP-FACUL™ 2024 </Text>
       </View>
-    </ImageBackground>
-   </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#3E2D3F",
+  },
+  backgroundImage: {
+    flex: 1,
+  },
+  header: {
+    width: "100%",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: statusBarHeight + 8,
+  },
+  title: {
+    fontSize: 32,
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    marginTop: 40,
+  },
+  subtitle: {
+    fontSize: 18,
+    color: "#B3B3B3",
+    fontWeight: "bold",
+    marginTop: 8,
+  },
+  buttonContainer: {
+    width: "100%",
+    marginTop: 64,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  footer: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  footerText: {
+    color: "#7A7A7A",
+  },
+});
