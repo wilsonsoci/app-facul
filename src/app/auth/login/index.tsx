@@ -35,13 +35,13 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3E2D3F", // Fundo da tela
-    width: "100%", // Equivalente a w-full do Tailwind
+    backgroundColor: "#3E2D3F",
+    width: "100%",
   },
   centered: {
     width: "100%",
-    alignItems: "center", // Centraliza no eixo horizontal
-    justifyContent: "center", // Centraliza no eixo vertical
+    alignItems: "center", 
+    justifyContent: "center", 
   },
   title: {
     fontSize: 32,

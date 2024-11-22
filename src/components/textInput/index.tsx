@@ -47,5 +47,6 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "#D3D3D3",
     fontSize: 16,
+    elevation: 3,
   },
 });
